@@ -1,0 +1,17 @@
+{
+  "clipId": "dialogue",
+  "checkId": "content-verification",
+  "mode": "verdict",
+  "status": "fail",
+  "source": "sample",
+  "verdict": {
+    "line_spoken_matches_script": true,
+    "correct_character_speaking": false,
+    "actual_spoken_words": "The shipment arrives tomorrow at nine.",
+    "actual_speaker": "woman in the denim jacket",
+    "notes": "The scripted line is audible but the woman's mouth moves while the bearded man stays silent."
+  },
+  "raw": {
+    "note": "SAMPLE fixture — replaced by `npm run prerun-checks` once clips are uploaded."
+  }
+}

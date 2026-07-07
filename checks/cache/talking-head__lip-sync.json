@@ -1,0 +1,32 @@
+{
+  "clipId": "talking-head",
+  "checkId": "lip-sync",
+  "mode": "timeline",
+  "status": "fail",
+  "source": "sample",
+  "segments": [
+    {
+      "startTime": 0.0,
+      "endTime": 3.4,
+      "metadata": {
+        "lips_match_words": false,
+        "native_lipsync_not_tts_over_silence": false,
+        "spoken_words": "Our new product launches this Friday,",
+        "notes": "Mouth barely articulates while full sentence plays — audio reads as TTS over near-still lips."
+      }
+    },
+    {
+      "startTime": 3.4,
+      "endTime": 6.0,
+      "metadata": {
+        "lips_match_words": false,
+        "native_lipsync_not_tts_over_silence": true,
+        "spoken_words": "and we could not be more excited about it.",
+        "notes": "Lip motion resumes but trails the phonemes by roughly 300ms."
+      }
+    }
+  ],
+  "raw": {
+    "note": "SAMPLE fixture — replaced by `npm run prerun-checks` once clips are uploaded."
+  }
+}

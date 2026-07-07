@@ -1,0 +1,84 @@
+{
+  "clips": [
+    {
+      "id": "talking-head",
+      "title": "Talking-head interview",
+      "defectLabel": "Lip-sync drift",
+      "expected": "fail",
+      "file": "/clips/talking-head.mp4",
+      "poster": "/clips/talking-head.jpg",
+      "durationSec": 6,
+      "defaultCheck": "lip-sync",
+      "assetId": null,
+      "params": {
+        "brief": "A professional woman in a navy blazer gives a corporate interview in a bright modern office, medium close-up, speaking to camera",
+        "line": "Our new product launches this Friday, and we could not be more excited about it.",
+        "speaker": "woman in a navy blazer"
+      }
+    },
+    {
+      "id": "product-broll",
+      "title": "Product B-roll vs. brief",
+      "defectLabel": "Missing brief elements",
+      "expected": "fail",
+      "file": "/clips/product-broll.mp4",
+      "poster": "/clips/product-broll.jpg",
+      "durationSec": 5,
+      "defaultCheck": "brief-match",
+      "assetId": null,
+      "params": {
+        "brief": "A red ceramic coffee mug with a white mountain logo printed on it, steam rising from the coffee, sitting on a rustic wooden desk next to an open silver laptop, camera slowly pans left to right, warm morning light",
+        "line": "",
+        "speaker": ""
+      }
+    },
+    {
+      "id": "card-shuffle",
+      "title": "Magician card shuffle",
+      "defectLabel": "Warping hands / artifacts",
+      "expected": "fail",
+      "file": "/clips/card-shuffle.mp4",
+      "poster": "/clips/card-shuffle.jpg",
+      "durationSec": 5,
+      "defaultCheck": "av-defect",
+      "assetId": null,
+      "params": {
+        "brief": "Close-up of a street magician's hands smoothly shuffling and fanning a deck of playing cards, cafe interior background, shallow depth of field",
+        "line": "",
+        "speaker": ""
+      }
+    },
+    {
+      "id": "dialogue",
+      "title": "Two-character dialogue",
+      "defectLabel": "Wrong speaker",
+      "expected": "fail",
+      "file": "/clips/dialogue.mp4",
+      "poster": "/clips/dialogue.jpg",
+      "durationSec": 6,
+      "defaultCheck": "content-verification",
+      "assetId": null,
+      "params": {
+        "brief": "Two people sit across a kitchen table in daylight: a bearded man in a maroon vest and a woman in a denim jacket; the man delivers a line, the woman nods",
+        "line": "The shipment arrives tomorrow at nine.",
+        "speaker": "bearded man in a maroon vest"
+      }
+    },
+    {
+      "id": "beach-dog",
+      "title": "Golden retriever on beach",
+      "defectLabel": "Clean beat (PASS)",
+      "expected": "pass",
+      "file": "/clips/beach-dog.mp4",
+      "poster": "/clips/beach-dog.jpg",
+      "durationSec": 8,
+      "defaultCheck": "content-log",
+      "assetId": null,
+      "params": {
+        "brief": "A golden retriever runs along a wide sandy beach at sunrise, kicking up sand, gentle waves rolling in, cinematic side tracking shot, warm golden light",
+        "line": "",
+        "speaker": ""
+      }
+    }
+  ]
+}

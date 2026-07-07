@@ -1,0 +1,23 @@
+{
+  "clipId": "product-broll",
+  "checkId": "brief-match",
+  "mode": "verdict",
+  "status": "fail",
+  "source": "sample",
+  "verdict": {
+    "brief_fulfilled": false,
+    "subject_present": true,
+    "action_present": false,
+    "setting_correct": true,
+    "missing_or_wrong": [
+      "white mountain logo not visible on the mug",
+      "no steam rising from the coffee",
+      "camera is static — the ordered left-to-right pan never happens"
+    ],
+    "confidence": 0.88,
+    "notes": "The mug and desk are present but three ordered elements are missing, so the brief is not fulfilled."
+  },
+  "raw": {
+    "note": "SAMPLE fixture — replaced by `npm run prerun-checks` once clips are uploaded."
+  }
+}

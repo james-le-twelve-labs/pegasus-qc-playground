@@ -1,0 +1,30 @@
+{
+  "clipId": "card-shuffle",
+  "checkId": "av-defect",
+  "mode": "timeline",
+  "status": "fail",
+  "source": "sample",
+  "segments": [
+    {
+      "startTime": 1.1,
+      "endTime": 3.2,
+      "metadata": {
+        "defect_type": "warping",
+        "severity": "major",
+        "description": "Fingers merge into the deck and cards morph shape mid-shuffle."
+      }
+    },
+    {
+      "startTime": 3.8,
+      "endTime": 5.0,
+      "metadata": {
+        "defect_type": "malformed_anatomy",
+        "severity": "major",
+        "description": "Left hand briefly shows six fingers while fanning the cards."
+      }
+    }
+  ],
+  "raw": {
+    "note": "SAMPLE fixture — replaced by `npm run prerun-checks` once clips are uploaded."
+  }
+}

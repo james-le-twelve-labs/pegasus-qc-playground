@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@import "@twelvelabs-io/react/tokens.css";
+@import "@twelvelabs-io/react/theme.css";
+
+/* Tailwind ignores node_modules by default — scan the UI kit for its utilities. */
+@source "../node_modules/@twelvelabs-io/react/dist";
+
+body {
+  @apply bg-surface-body font-tl-sans text-foreground-body antialiased;
+}
