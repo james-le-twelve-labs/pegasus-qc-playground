@@ -1,0 +1,90 @@
+{
+  "clipId": "beach-dog",
+  "checkId": "av-defect",
+  "mode": "timeline",
+  "status": "fail",
+  "source": "cache",
+  "elapsedMs": 12254,
+  "segments": [
+    {
+      "startTime": 0,
+      "endTime": 8,
+      "metadata": {
+        "defect_type": "warping",
+        "description": "The dog's anatomy exhibits continuous warping and morphing throughout the clip, with limbs and facial features distorting unnaturally during movement.",
+        "severity": "major"
+      }
+    }
+  ],
+  "raw": {
+    "task_id": "6a4c5c5c9dc43a053571d73f",
+    "custom_id": null,
+    "video_source": {
+      "type": "asset_id",
+      "asset_id": "6a4c4d359dc43a053571637e",
+      "system_metadata": {
+        "duration": 8
+      }
+    },
+    "request_params": {
+      "analysis_mode": "time_based_metadata",
+      "response_format": {
+        "type": "segment_definitions",
+        "segment_definitions": [
+          {
+            "id": "av_defects",
+            "description": "Segment the clip wherever a technical audio-visual defect is visible or audible. Include flickering, visual artifacts, warping or morphing objects, malformed hands or faces, duplicated limbs, sudden resolution or exposure jumps, audio dropout, distortion, or lip/audio sync drift. Do NOT judge creative quality (hook, brand fit, aesthetics).",
+            "fields": [
+              {
+                "name": "defect_type",
+                "type": "string",
+                "description": "The primary defect in this segment",
+                "enum": [
+                  "flicker",
+                  "artifact",
+                  "warping",
+                  "malformed_anatomy",
+                  "duplicated_limb",
+                  "exposure_jump",
+                  "audio_dropout",
+                  "distortion",
+                  "sync_drift",
+                  "other"
+                ]
+              },
+              {
+                "name": "severity",
+                "type": "string",
+                "description": "How disqualifying the defect is",
+                "enum": [
+                  "minor",
+                  "major"
+                ]
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "description": "One-sentence description of what is wrong in this segment"
+              }
+            ]
+          }
+        ]
+      },
+      "temperature": 0.2,
+      "max_tokens": 32768,
+      "min_segment_duration": 2
+    },
+    "status": "ready",
+    "created_at": "2026-07-07T01:54:36Z",
+    "completed_at": "2026-07-07T01:54:48Z",
+    "result": {
+      "generation_id": "e8593581-e2dd-47f6-9d39-e373ea2a1fa6",
+      "data": "{\"av_defects\":[{\"end_time\":8,\"metadata\":{\"defect_type\":\"warping\",\"description\":\"The dog's anatomy exhibits continuous warping and morphing throughout the clip, with limbs and facial features distorting unnaturally during movement.\",\"severity\":\"major\"},\"start_time\":0}]}",
+      "finish_reason": "stop",
+      "usage": {
+        "output_tokens": 103,
+        "input_tokens": 4401
+      }
+    }
+  }
+}

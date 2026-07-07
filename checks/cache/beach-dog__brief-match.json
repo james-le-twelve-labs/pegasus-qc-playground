@@ -1,0 +1,25 @@
+{
+  "clipId": "beach-dog",
+  "checkId": "brief-match",
+  "mode": "verdict",
+  "status": "pass",
+  "source": "cache",
+  "elapsedMs": 9982,
+  "verdict": {
+    "brief_fulfilled": true,
+    "subject_present": true,
+    "action_present": true,
+    "setting_correct": true,
+    "missing_or_wrong": [],
+    "confidence": 1,
+    "notes": "The video perfectly matches the brief, featuring a golden retriever running along a beach at sunrise with cinematic side tracking and warm lighting."
+  },
+  "raw": {
+    "id": "1205d230-c58c-4000-8a34-86bc9b240ea6",
+    "data": "\n\n{\n  \"brief_fulfilled\": true,\n  \"subject_present\": true,\n  \"action_present\": true,\n  \"setting_correct\": true,\n  \"missing_or_wrong\": [],\n  \"confidence\": 1.0,\n  \"notes\": \"The video perfectly matches the brief, featuring a golden retriever running along a beach at sunrise with cinematic side tracking and warm lighting.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "output_tokens": 91
+    }
+  }
+}

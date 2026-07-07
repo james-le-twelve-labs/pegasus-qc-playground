@@ -1,0 +1,90 @@
+{
+  "clipId": "dialogue",
+  "checkId": "av-defect",
+  "mode": "timeline",
+  "status": "fail",
+  "source": "cache",
+  "elapsedMs": 9182,
+  "segments": [
+    {
+      "startTime": 0,
+      "endTime": 6.1,
+      "metadata": {
+        "defect_type": "sync_drift",
+        "description": "The woman's mouth is visibly moving while the audio is attributed to a male speaker, indicating a clear lip-sync drift.",
+        "severity": "major"
+      }
+    }
+  ],
+  "raw": {
+    "task_id": "6a4c5c3122b11beffa66b94b",
+    "custom_id": null,
+    "video_source": {
+      "type": "asset_id",
+      "asset_id": "6a4c4e29c7babe8a7abaebc5",
+      "system_metadata": {
+        "duration": 6.12
+      }
+    },
+    "request_params": {
+      "analysis_mode": "time_based_metadata",
+      "response_format": {
+        "type": "segment_definitions",
+        "segment_definitions": [
+          {
+            "id": "av_defects",
+            "description": "Segment the clip wherever a technical audio-visual defect is visible or audible. Include flickering, visual artifacts, warping or morphing objects, malformed hands or faces, duplicated limbs, sudden resolution or exposure jumps, audio dropout, distortion, or lip/audio sync drift. Do NOT judge creative quality (hook, brand fit, aesthetics).",
+            "fields": [
+              {
+                "name": "defect_type",
+                "type": "string",
+                "description": "The primary defect in this segment",
+                "enum": [
+                  "flicker",
+                  "artifact",
+                  "warping",
+                  "malformed_anatomy",
+                  "duplicated_limb",
+                  "exposure_jump",
+                  "audio_dropout",
+                  "distortion",
+                  "sync_drift",
+                  "other"
+                ]
+              },
+              {
+                "name": "severity",
+                "type": "string",
+                "description": "How disqualifying the defect is",
+                "enum": [
+                  "minor",
+                  "major"
+                ]
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "description": "One-sentence description of what is wrong in this segment"
+              }
+            ]
+          }
+        ]
+      },
+      "temperature": 0.2,
+      "max_tokens": 32768,
+      "min_segment_duration": 2
+    },
+    "status": "ready",
+    "created_at": "2026-07-07T01:53:53Z",
+    "completed_at": "2026-07-07T01:54:00Z",
+    "result": {
+      "generation_id": "d670f38f-c799-4fe9-8195-e278057e9704",
+      "data": "{\"av_defects\":[{\"end_time\":6.1,\"metadata\":{\"defect_type\":\"sync_drift\",\"description\":\"The woman's mouth is visibly moving while the audio is attributed to a male speaker, indicating a clear lip-sync drift.\",\"severity\":\"major\"},\"start_time\":0}]}",
+      "finish_reason": "stop",
+      "usage": {
+        "output_tokens": 100,
+        "input_tokens": 3889
+      }
+    }
+  }
+}

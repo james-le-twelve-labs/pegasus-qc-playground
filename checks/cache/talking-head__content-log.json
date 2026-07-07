@@ -1,0 +1,104 @@
+{
+  "clipId": "talking-head",
+  "checkId": "content-log",
+  "mode": "timeline",
+  "status": "info",
+  "source": "cache",
+  "elapsedMs": 9223,
+  "segments": [
+    {
+      "startTime": 0,
+      "endTime": 5,
+      "metadata": {
+        "characters": [
+          "Woman in business suit"
+        ],
+        "on_screen_text": [],
+        "setting": "Modern office with large windows and desks",
+        "summary": "A woman in a business suit sits in an office chair, smiling and looking slightly off-camera as she speaks. The background shows a modern office environment with large windows and desks.",
+        "tags": [
+          "business",
+          "office",
+          "woman",
+          "professional",
+          "interview",
+          "corporate"
+        ]
+      }
+    }
+  ],
+  "raw": {
+    "task_id": "6a4c5bd80d0dea76ce395e59",
+    "custom_id": null,
+    "video_source": {
+      "type": "asset_id",
+      "asset_id": "6a4c4fc597b9fceedb2902b2",
+      "system_metadata": {
+        "duration": 5.03125
+      }
+    },
+    "request_params": {
+      "analysis_mode": "time_based_metadata",
+      "response_format": {
+        "type": "segment_definitions",
+        "segment_definitions": [
+          {
+            "id": "scenes",
+            "description": "Segment the clip into distinct scenes based on changes in setting, subject, or visual composition. For each scene, extract catalog metadata.",
+            "fields": [
+              {
+                "name": "summary",
+                "type": "string",
+                "description": "One-to-two sentence description of what happens in this scene"
+              },
+              {
+                "name": "setting",
+                "type": "string",
+                "description": "The location or environment of the scene"
+              },
+              {
+                "name": "characters",
+                "type": "array",
+                "description": "Characters or people visible in the scene",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "on_screen_text",
+                "type": "array",
+                "description": "Any visible on-screen text or captions",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "tags",
+                "type": "array",
+                "description": "Short catalog tags for search and retrieval",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "temperature": 0.2,
+      "max_tokens": 32768,
+      "min_segment_duration": 2
+    },
+    "status": "ready",
+    "created_at": "2026-07-07T01:52:24Z",
+    "completed_at": "2026-07-07T01:52:33Z",
+    "result": {
+      "generation_id": "2ff08812-4a7d-4df8-a719-b648b0df7d7c",
+      "data": "{\"scenes\":[{\"end_time\":5,\"metadata\":{\"characters\":[\"Woman in business suit\"],\"on_screen_text\":[],\"setting\":\"Modern office with large windows and desks\",\"summary\":\"A woman in a business suit sits in an office chair, smiling and looking slightly off-camera as she speaks. The background shows a modern office environment with large windows and desks.\",\"tags\":[\"business\",\"office\",\"woman\",\"professional\",\"interview\",\"corporate\"]},\"start_time\":0}]}",
+      "finish_reason": "stop",
+      "usage": {
+        "output_tokens": 171,
+        "input_tokens": 3904
+      }
+    }
+  }
+}

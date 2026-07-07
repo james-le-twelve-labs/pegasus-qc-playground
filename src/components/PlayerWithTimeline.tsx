@@ -11,14 +11,17 @@ interface PlayerWithTimelineProps {
 function segmentLabel(check: CheckDef, segment: QcSegment, index: number): string {
   const meta = segment.metadata
   if (check.id === "av-defect") return String(meta.defect_type ?? "defect")
-  if (check.id === "lip-sync") return meta.lips_match_words ? "sync ok" : "sync broken"
+  if (check.id === "lip-sync") {
+    if (meta.speech_audible === false) return "no speech"
+    return meta.lips_match_words ? "sync ok" : "sync broken"
+  }
   return `scene ${index + 1}`
 }
 
 function segmentIsBad(check: CheckDef, segment: QcSegment): boolean {
   const meta = segment.metadata
   if (check.id === "av-defect") return true
-  if (check.id === "lip-sync") return !meta.lips_match_words
+  if (check.id === "lip-sync") return meta.speech_audible !== false && !meta.lips_match_words
   return false
 }
 

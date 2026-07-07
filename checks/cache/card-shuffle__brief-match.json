@@ -1,0 +1,25 @@
+{
+  "clipId": "card-shuffle",
+  "checkId": "brief-match",
+  "mode": "verdict",
+  "status": "pass",
+  "source": "cache",
+  "elapsedMs": 6815,
+  "verdict": {
+    "brief_fulfilled": true,
+    "subject_present": true,
+    "action_present": true,
+    "setting_correct": true,
+    "missing_or_wrong": [],
+    "confidence": 0.95,
+    "notes": "The clip successfully depicts a close-up of hands shuffling cards in a cafe setting with a shallow depth of field, matching the brief."
+  },
+  "raw": {
+    "id": "c87e15b8-c291-492d-961c-b0267e097423",
+    "data": "\n\n{\n  \"brief_fulfilled\": true,\n  \"subject_present\": true,\n  \"action_present\": true,\n  \"setting_correct\": true,\n  \"missing_or_wrong\": [],\n  \"confidence\": 0.95,\n  \"notes\": \"The clip successfully depicts a close-up of hands shuffling cards in a cafe setting with a shallow depth of field, matching the brief.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "output_tokens": 93
+    }
+  }
+}

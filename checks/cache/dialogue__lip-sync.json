@@ -1,32 +1,32 @@
 {
-  "clipId": "talking-head",
+  "clipId": "dialogue",
   "checkId": "lip-sync",
   "mode": "timeline",
-  "status": "fail",
+  "status": "pass",
   "source": "cache",
-  "elapsedMs": 9380,
+  "elapsedMs": 9179,
   "segments": [
     {
       "startTime": 0,
-      "endTime": 5,
+      "endTime": 2.5,
       "metadata": {
-        "lips_match_words": false,
-        "mouth_visibly_articulating": false,
-        "native_lipsync_not_tts_over_silence": false,
-        "notes": "The woman's mouth remains closed or in a static smile throughout the clip. She does not articulate any words, indicating the audio is a voiceover or TTS layered over the footage.",
+        "lips_match_words": true,
+        "mouth_visibly_articulating": true,
+        "native_lipsync_not_tts_over_silence": true,
+        "notes": "The man's mouth is clearly visible and articulates in sync with the spoken words. His lips open and close naturally as he speaks, matching the phonemes of the sentence.",
         "speech_audible": true,
-        "spoken_words": "Our new product launches this Friday, and we could not be more excited about it."
+        "spoken_words": "The shipment arrives tomorrow at nine."
       }
     }
   ],
   "raw": {
-    "task_id": "6a4c5e5a6feadbb65a9f00a2",
+    "task_id": "6a4c5e769dc43a053571e7a9",
     "custom_id": null,
     "video_source": {
       "type": "asset_id",
-      "asset_id": "6a4c4fc597b9fceedb2902b2",
+      "asset_id": "6a4c4e29c7babe8a7abaebc5",
       "system_metadata": {
-        "duration": 5.03125
+        "duration": 6.12
       }
     },
     "request_params": {
@@ -77,15 +77,15 @@
       "min_segment_duration": 2
     },
     "status": "ready",
-    "created_at": "2026-07-07T02:03:06Z",
-    "completed_at": "2026-07-07T02:03:15Z",
+    "created_at": "2026-07-07T02:03:34Z",
+    "completed_at": "2026-07-07T02:03:42Z",
     "result": {
-      "generation_id": "0f446112-aaaa-4bf8-b83f-594df18f98aa",
-      "data": "{\"lipsync\":[{\"end_time\":5,\"metadata\":{\"lips_match_words\":false,\"mouth_visibly_articulating\":false,\"native_lipsync_not_tts_over_silence\":false,\"notes\":\"The woman's mouth remains closed or in a static smile throughout the clip. She does not articulate any words, indicating the audio is a voiceover or TTS layered over the footage.\",\"speech_audible\":true,\"spoken_words\":\"Our new product launches this Friday, and we could not be more excited about it.\"},\"start_time\":0}]}",
+      "generation_id": "443ca202-48a1-4951-9214-07c0faefd369",
+      "data": "{\"lipsync\":[{\"end_time\":2.5,\"metadata\":{\"lips_match_words\":true,\"mouth_visibly_articulating\":true,\"native_lipsync_not_tts_over_silence\":true,\"notes\":\"The man's mouth is clearly visible and articulates in sync with the spoken words. His lips open and close naturally as he speaks, matching the phonemes of the sentence.\",\"speech_audible\":true,\"spoken_words\":\"The shipment arrives tomorrow at nine.\"},\"start_time\":0}]}",
       "finish_reason": "stop",
       "usage": {
-        "output_tokens": 165,
-        "input_tokens": 4141
+        "output_tokens": 153,
+        "input_tokens": 4131
       }
     }
   }

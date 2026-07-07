@@ -133,8 +133,14 @@ function deriveVerdictStatus(check, verdict) {
 function deriveTimelineStatus(check, segments) {
   const rule = check.passRule ?? {}
   if (rule.type === "noSegments") return segments.length === 0 ? "pass" : "fail"
-  if (rule.type === "allSegmentsTrue")
-    return segments.every((s) => s.metadata?.[rule.field]) ? "pass" : "fail"
+  if (rule.type === "allSegmentsTrue") {
+    // `onlyWhen` gates applicability: segments where that field is false are
+    // N/A (e.g. no speech audible), not failures.
+    const applicable = rule.onlyWhen
+      ? segments.filter((s) => s.metadata?.[rule.onlyWhen])
+      : segments
+    return applicable.every((s) => s.metadata?.[rule.field]) ? "pass" : "fail"
+  }
   return "info"
 }
 

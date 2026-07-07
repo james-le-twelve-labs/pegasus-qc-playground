@@ -1,0 +1,28 @@
+{
+  "clipId": "dialogue",
+  "checkId": "brief-match",
+  "mode": "verdict",
+  "status": "fail",
+  "source": "cache",
+  "elapsedMs": 8127,
+  "verdict": {
+    "brief_fulfilled": false,
+    "subject_present": true,
+    "action_present": false,
+    "setting_correct": true,
+    "missing_or_wrong": [
+      "The woman does not deliver a line; the man is the one speaking.",
+      "The man does not nod; he is talking and smiling."
+    ],
+    "confidence": 0.95,
+    "notes": "The visual setup matches the brief, but the specific actions (woman speaking, man nodding) are incorrect as the man is speaking and the woman is listening."
+  },
+  "raw": {
+    "id": "3ccdba92-7601-4fd9-82b5-0881860b6e65",
+    "data": "\n\n{\n  \"brief_fulfilled\": false,\n  \"subject_present\": true,\n  \"action_present\": false,\n  \"setting_correct\": true,\n  \"missing_or_wrong\": [\n    \"The woman does not deliver a line; the man is the one speaking.\",\n    \"The man does not nod; he is talking and smiling.\"\n  ],\n  \"confidence\": 0.95,\n  \"notes\": \"The visual setup matches the brief, but the specific actions (woman speaking, man nodding) are incorrect as the man is speaking and the woman is listening.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "output_tokens": 134
+    }
+  }
+}

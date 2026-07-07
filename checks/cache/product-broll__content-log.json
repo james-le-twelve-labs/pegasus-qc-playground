@@ -1,0 +1,105 @@
+{
+  "clipId": "product-broll",
+  "checkId": "content-log",
+  "mode": "timeline",
+  "status": "info",
+  "source": "cache",
+  "elapsedMs": 12224,
+  "segments": [
+    {
+      "startTime": 0,
+      "endTime": 5,
+      "metadata": {
+        "characters": [],
+        "on_screen_text": [
+          "SUMMIT"
+        ],
+        "setting": "A cozy indoor setting with a window in the background showing a blurred outdoor view.",
+        "summary": "A static shot of a wooden table with a red mug, a laptop, and a croissant, with steam rising from the mug.",
+        "tags": [
+          "coffee",
+          "laptop",
+          "croissant",
+          "breakfast",
+          "workspace",
+          "steam",
+          "red mug"
+        ]
+      }
+    }
+  ],
+  "raw": {
+    "task_id": "6a4c5bf8a050a53f8f78e9f0",
+    "custom_id": null,
+    "video_source": {
+      "type": "asset_id",
+      "asset_id": "6a4c4e6e9dc43a0535716cb9",
+      "system_metadata": {
+        "duration": 5.03125
+      }
+    },
+    "request_params": {
+      "analysis_mode": "time_based_metadata",
+      "response_format": {
+        "type": "segment_definitions",
+        "segment_definitions": [
+          {
+            "id": "scenes",
+            "description": "Segment the clip into distinct scenes based on changes in setting, subject, or visual composition. For each scene, extract catalog metadata.",
+            "fields": [
+              {
+                "name": "summary",
+                "type": "string",
+                "description": "One-to-two sentence description of what happens in this scene"
+              },
+              {
+                "name": "setting",
+                "type": "string",
+                "description": "The location or environment of the scene"
+              },
+              {
+                "name": "characters",
+                "type": "array",
+                "description": "Characters or people visible in the scene",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "on_screen_text",
+                "type": "array",
+                "description": "Any visible on-screen text or captions",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "tags",
+                "type": "array",
+                "description": "Short catalog tags for search and retrieval",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "temperature": 0.2,
+      "max_tokens": 32768,
+      "min_segment_duration": 2
+    },
+    "status": "ready",
+    "created_at": "2026-07-07T01:52:56Z",
+    "completed_at": "2026-07-07T01:53:06Z",
+    "result": {
+      "generation_id": "6a2375df-2c54-495e-bdf2-b16de17467ca",
+      "data": "{\"scenes\":[{\"end_time\":5,\"metadata\":{\"characters\":[],\"on_screen_text\":[\"SUMMIT\"],\"setting\":\"A cozy indoor setting with a window in the background showing a blurred outdoor view.\",\"summary\":\"A static shot of a wooden table with a red mug, a laptop, and a croissant, with steam rising from the mug.\",\"tags\":[\"coffee\",\"laptop\",\"croissant\",\"breakfast\",\"workspace\",\"steam\",\"red mug\"]},\"start_time\":0}]}",
+      "finish_reason": "stop",
+      "usage": {
+        "output_tokens": 176,
+        "input_tokens": 3830
+      }
+    }
+  }
+}

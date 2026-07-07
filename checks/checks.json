@@ -6,8 +6,13 @@
       "tagline": "Did I get what I ordered?",
       "mode": "verdict",
       "promptTemplate": "You are a broadcast generation-QA engineer inspecting a SINGLE freshly generated\nvideo clip (one beat) BEFORE it is composited into a final cut. Your only job is\nto answer: did the generator produce what was requested?\n\nThe clip was ordered with this brief:\n\"{{brief}}\"\n\nJudge ONLY whether the brief was fulfilled. Do NOT score creative quality or taste.\n\nRespond with ONLY valid JSON:\n{\n  \"brief_fulfilled\": true/false,\n  \"subject_present\": true/false,\n  \"action_present\": true/false,\n  \"setting_correct\": true/false,\n  \"missing_or_wrong\": [\"<each element that is missing or wrong>\"],\n  \"confidence\": 0.0-1.0,\n  \"notes\": \"<one sentence>\"\n}",
-      "params": ["brief"],
-      "passRule": { "type": "booleanField", "field": "brief_fulfilled" }
+      "params": [
+        "brief"
+      ],
+      "passRule": {
+        "type": "booleanField",
+        "field": "brief_fulfilled"
+      }
     },
     {
       "id": "av-defect",
@@ -40,7 +45,10 @@
             "name": "severity",
             "type": "string",
             "description": "How disqualifying the defect is",
-            "enum": ["minor", "major"]
+            "enum": [
+              "minor",
+              "major"
+            ]
           },
           {
             "name": "description",
@@ -49,7 +57,9 @@
           }
         ]
       },
-      "passRule": { "type": "noSegments" }
+      "passRule": {
+        "type": "noSegments"
+      }
     },
     {
       "id": "lip-sync",
@@ -59,12 +69,12 @@
       "minSegmentDuration": 2,
       "segmentDefinition": {
         "id": "lipsync",
-        "description": "Segment every window where speech is audible. In each window, watch the on-camera person's MOUTH closely before answering the fields: does the mouth visibly open, close, and articulate in time with each word heard? Common failure to catch: voiceover or TTS audio laid over footage of a person whose mouth is closed, still, or smiling without speaking.",
+        "description": "Segment every window where speech is audible. If no human speech is audible anywhere in the clip, return no segments. In each window, watch the on-camera person's MOUTH closely before answering the fields: does the mouth visibly open, close, and articulate in time with each word heard? Common failure to catch: voiceover or TTS audio laid over footage of a person whose mouth is closed, still, or smiling without speaking.",
         "fields": [
           {
             "name": "mouth_visibly_articulating",
             "type": "boolean",
-            "description": "True ONLY if the mouth visibly opens and closes while the words are heard. False if the lips stay closed, frozen, or barely move during audible speech."
+            "description": "Judge the VIDEO only, ignoring the audio: true ONLY if you can SEE the mouth repeatedly open and close in speech-like articulation. False if the lips stay closed, hold a smile, or barely move \u2014 even if speech is heard."
           },
           {
             "name": "lips_match_words",
@@ -75,6 +85,11 @@
             "name": "native_lipsync_not_tts_over_silence",
             "type": "boolean",
             "description": "False if the audio sounds like narration/TTS laid over footage of someone who is not speaking on camera. True only if the on-camera person is genuinely producing the words."
+          },
+          {
+            "name": "speech_audible",
+            "type": "boolean",
+            "description": "Judge the AUDIO TRACK only: true if spoken words are audible in this window, regardless of whether anyone on camera appears to be speaking. False for silent footage, music, or ambient sound without spoken words."
           },
           {
             "name": "spoken_words",
@@ -88,7 +103,11 @@
           }
         ]
       },
-      "passRule": { "type": "allSegmentsTrue", "field": "lips_match_words" }
+      "passRule": {
+        "type": "allSegmentsTrue",
+        "field": "lips_match_words",
+        "onlyWhen": "speech_audible"
+      }
     },
     {
       "id": "content-verification",
@@ -96,10 +115,16 @@
       "tagline": "Right character, right line",
       "mode": "verdict",
       "promptTemplate": "You are verifying dialogue attribution in a multi-character clip.\n\nExpected line: \"{{line}}\"\nExpected speaker: \"{{speaker}}\"\n\nWatch and listen. Confirm the correct character speaks the correct line, and that\nthe audio matches the script.\n\nRespond with ONLY valid JSON:\n{\n  \"line_spoken_matches_script\": true/false,\n  \"correct_character_speaking\": true/false,\n  \"actual_spoken_words\": \"<what you HEAR>\",\n  \"actual_speaker\": \"<who appears to say it>\",\n  \"notes\": \"<one sentence>\"\n}",
-      "params": ["line", "speaker"],
+      "params": [
+        "line",
+        "speaker"
+      ],
       "passRule": {
         "type": "allBooleanFields",
-        "fields": ["line_spoken_matches_script", "correct_character_speaking"]
+        "fields": [
+          "line_spoken_matches_script",
+          "correct_character_speaking"
+        ]
       }
     },
     {
@@ -125,24 +150,32 @@
           {
             "name": "characters",
             "type": "array",
-            "items": { "type": "string" },
+            "items": {
+              "type": "string"
+            },
             "description": "Characters or people visible in the scene"
           },
           {
             "name": "on_screen_text",
             "type": "array",
-            "items": { "type": "string" },
+            "items": {
+              "type": "string"
+            },
             "description": "Any visible on-screen text or captions"
           },
           {
             "name": "tags",
             "type": "array",
-            "items": { "type": "string" },
+            "items": {
+              "type": "string"
+            },
             "description": "Short catalog tags for search and retrieval"
           }
         ]
       },
-      "passRule": { "type": "alwaysInfo" }
+      "passRule": {
+        "type": "alwaysInfo"
+      }
     }
   ]
 }

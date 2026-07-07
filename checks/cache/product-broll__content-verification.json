@@ -1,0 +1,23 @@
+{
+  "clipId": "product-broll",
+  "checkId": "content-verification",
+  "mode": "verdict",
+  "status": "pass",
+  "source": "cache",
+  "elapsedMs": 4539,
+  "verdict": {
+    "line_spoken_matches_script": true,
+    "correct_character_speaking": true,
+    "actual_spoken_words": "",
+    "actual_speaker": "",
+    "notes": "The video clip contains no dialogue or visible speakers, only a static scene of a workspace."
+  },
+  "raw": {
+    "id": "1ed8e13d-c1f3-4cc0-bca4-e1f0026a279b",
+    "data": "\n\n{\n  \"line_spoken_matches_script\": true,\n  \"correct_character_speaking\": true,\n  \"actual_spoken_words\": \"\",\n  \"actual_speaker\": \"\",\n  \"notes\": \"The video clip contains no dialogue or visible speakers, only a static scene of a workspace.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "output_tokens": 71
+    }
+  }
+}

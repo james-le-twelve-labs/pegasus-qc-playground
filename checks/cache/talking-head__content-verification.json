@@ -1,0 +1,23 @@
+{
+  "clipId": "talking-head",
+  "checkId": "content-verification",
+  "mode": "verdict",
+  "status": "pass",
+  "source": "cache",
+  "elapsedMs": 4912,
+  "verdict": {
+    "line_spoken_matches_script": true,
+    "correct_character_speaking": true,
+    "actual_spoken_words": "Our new product launches this Friday, and we could not be more excited about it.",
+    "actual_speaker": "woman in a navy blazer",
+    "notes": "The woman in the navy blazer is the only person visible and her lip movements align with the spoken dialogue."
+  },
+  "raw": {
+    "id": "34a50e06-376f-4a15-9a50-3833bd426568",
+    "data": "\n\n{\n  \"line_spoken_matches_script\": true,\n  \"correct_character_speaking\": true,\n  \"actual_spoken_words\": \"Our new product launches this Friday, and we could not be more excited about it.\",\n  \"actual_speaker\": \"woman in a navy blazer\",\n  \"notes\": \"The woman in the navy blazer is the only person visible and her lip movements align with the spoken dialogue.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "output_tokens": 99
+    }
+  }
+}

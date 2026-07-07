@@ -1,0 +1,90 @@
+{
+  "clipId": "talking-head",
+  "checkId": "av-defect",
+  "mode": "timeline",
+  "status": "fail",
+  "source": "cache",
+  "elapsedMs": 9214,
+  "segments": [
+    {
+      "startTime": 0,
+      "endTime": 5,
+      "metadata": {
+        "defect_type": "sync_drift",
+        "description": "The speaker's mouth is closed at the beginning of the clip while audio is already playing, indicating a lip/audio sync drift.",
+        "severity": "minor"
+      }
+    }
+  ],
+  "raw": {
+    "task_id": "6a4c5bca0d0dea76ce395e00",
+    "custom_id": null,
+    "video_source": {
+      "type": "asset_id",
+      "asset_id": "6a4c4fc597b9fceedb2902b2",
+      "system_metadata": {
+        "duration": 5.03125
+      }
+    },
+    "request_params": {
+      "analysis_mode": "time_based_metadata",
+      "response_format": {
+        "type": "segment_definitions",
+        "segment_definitions": [
+          {
+            "id": "av_defects",
+            "description": "Segment the clip wherever a technical audio-visual defect is visible or audible. Include flickering, visual artifacts, warping or morphing objects, malformed hands or faces, duplicated limbs, sudden resolution or exposure jumps, audio dropout, distortion, or lip/audio sync drift. Do NOT judge creative quality (hook, brand fit, aesthetics).",
+            "fields": [
+              {
+                "name": "defect_type",
+                "type": "string",
+                "description": "The primary defect in this segment",
+                "enum": [
+                  "flicker",
+                  "artifact",
+                  "warping",
+                  "malformed_anatomy",
+                  "duplicated_limb",
+                  "exposure_jump",
+                  "audio_dropout",
+                  "distortion",
+                  "sync_drift",
+                  "other"
+                ]
+              },
+              {
+                "name": "severity",
+                "type": "string",
+                "description": "How disqualifying the defect is",
+                "enum": [
+                  "minor",
+                  "major"
+                ]
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "description": "One-sentence description of what is wrong in this segment"
+              }
+            ]
+          }
+        ]
+      },
+      "temperature": 0.2,
+      "max_tokens": 32768,
+      "min_segment_duration": 2
+    },
+    "status": "ready",
+    "created_at": "2026-07-07T01:52:10Z",
+    "completed_at": "2026-07-07T01:52:18Z",
+    "result": {
+      "generation_id": "78b28d8b-c4b1-4b27-8562-c9c303a5866e",
+      "data": "{\"av_defects\":[{\"end_time\":5,\"metadata\":{\"defect_type\":\"sync_drift\",\"description\":\"The speaker's mouth is closed at the beginning of the clip while audio is already playing, indicating a lip/audio sync drift.\",\"severity\":\"minor\"},\"start_time\":0}]}",
+      "finish_reason": "stop",
+      "usage": {
+        "output_tokens": 101,
+        "input_tokens": 3899
+      }
+    }
+  }
+}

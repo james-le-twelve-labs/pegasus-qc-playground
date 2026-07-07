@@ -1,0 +1,104 @@
+{
+  "clipId": "dialogue",
+  "checkId": "content-log",
+  "mode": "timeline",
+  "status": "info",
+  "source": "cache",
+  "elapsedMs": 12222,
+  "segments": [
+    {
+      "startTime": 0,
+      "endTime": 6.1,
+      "metadata": {
+        "characters": [
+          "Man with a beard wearing a maroon vest",
+          "Woman with shoulder-length brown hair wearing a denim jacket"
+        ],
+        "on_screen_text": [],
+        "setting": "A modern kitchen with white cabinets, a wooden table, and various kitchen appliances visible in the background.",
+        "summary": "A man and a woman are sitting at a wooden table in a kitchen, engaged in a conversation. The man is speaking while the woman listens attentively.",
+        "tags": [
+          "conversation",
+          "kitchen",
+          "couple",
+          "indoor",
+          "dialogue"
+        ]
+      }
+    }
+  ],
+  "raw": {
+    "task_id": "6a4c5c466feadbb65a9ef06c",
+    "custom_id": null,
+    "video_source": {
+      "type": "asset_id",
+      "asset_id": "6a4c4e29c7babe8a7abaebc5",
+      "system_metadata": {
+        "duration": 6.12
+      }
+    },
+    "request_params": {
+      "analysis_mode": "time_based_metadata",
+      "response_format": {
+        "type": "segment_definitions",
+        "segment_definitions": [
+          {
+            "id": "scenes",
+            "description": "Segment the clip into distinct scenes based on changes in setting, subject, or visual composition. For each scene, extract catalog metadata.",
+            "fields": [
+              {
+                "name": "summary",
+                "type": "string",
+                "description": "One-to-two sentence description of what happens in this scene"
+              },
+              {
+                "name": "setting",
+                "type": "string",
+                "description": "The location or environment of the scene"
+              },
+              {
+                "name": "characters",
+                "type": "array",
+                "description": "Characters or people visible in the scene",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "on_screen_text",
+                "type": "array",
+                "description": "Any visible on-screen text or captions",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "tags",
+                "type": "array",
+                "description": "Short catalog tags for search and retrieval",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "temperature": 0.2,
+      "max_tokens": 32768,
+      "min_segment_duration": 2
+    },
+    "status": "ready",
+    "created_at": "2026-07-07T01:54:14Z",
+    "completed_at": "2026-07-07T01:54:24Z",
+    "result": {
+      "generation_id": "bdcccd9f-4d82-4a74-a98d-3e8bc5ae7d76",
+      "data": "{\"scenes\":[{\"end_time\":6.1,\"metadata\":{\"characters\":[\"Man with a beard wearing a maroon vest\",\"Woman with shoulder-length brown hair wearing a denim jacket\"],\"on_screen_text\":[],\"setting\":\"A modern kitchen with white cabinets, a wooden table, and various kitchen appliances visible in the background.\",\"summary\":\"A man and a woman are sitting at a wooden table in a kitchen, engaged in a conversation. The man is speaking while the woman listens attentively.\",\"tags\":[\"conversation\",\"kitchen\",\"couple\",\"indoor\",\"dialogue\"]},\"start_time\":0}]}",
+      "finish_reason": "stop",
+      "usage": {
+        "output_tokens": 195,
+        "input_tokens": 3894
+      }
+    }
+  }
+}

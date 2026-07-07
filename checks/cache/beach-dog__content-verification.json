@@ -1,0 +1,23 @@
+{
+  "clipId": "beach-dog",
+  "checkId": "content-verification",
+  "mode": "verdict",
+  "status": "pass",
+  "source": "cache",
+  "elapsedMs": 4634,
+  "verdict": {
+    "line_spoken_matches_script": true,
+    "correct_character_speaking": true,
+    "actual_spoken_words": "",
+    "actual_speaker": "",
+    "notes": "The video contains no dialogue or speech; it features a dog running on a beach with ambient sounds only."
+  },
+  "raw": {
+    "id": "c8fc334d-127a-41ab-b689-072ef986b4ec",
+    "data": "\n\n{\n  \"line_spoken_matches_script\": true,\n  \"correct_character_speaking\": true,\n  \"actual_spoken_words\": \"\",\n  \"actual_speaker\": \"\",\n  \"notes\": \"The video contains no dialogue or speech; it features a dog running on a beach with ambient sounds only.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "output_tokens": 74
+    }
+  }
+}

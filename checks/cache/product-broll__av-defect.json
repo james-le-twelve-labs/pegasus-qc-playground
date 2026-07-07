@@ -1,0 +1,90 @@
+{
+  "clipId": "product-broll",
+  "checkId": "av-defect",
+  "mode": "timeline",
+  "status": "fail",
+  "source": "cache",
+  "elapsedMs": 9196,
+  "segments": [
+    {
+      "startTime": 0,
+      "endTime": 5,
+      "metadata": {
+        "defect_type": "artifact",
+        "description": "The steam rising from the coffee mug exhibits unnatural, repetitive looping behavior, indicating a visual artifact.",
+        "severity": "minor"
+      }
+    }
+  ],
+  "raw": {
+    "task_id": "6a4c5be1a050a53f8f78e958",
+    "custom_id": null,
+    "video_source": {
+      "type": "asset_id",
+      "asset_id": "6a4c4e6e9dc43a0535716cb9",
+      "system_metadata": {
+        "duration": 5.03125
+      }
+    },
+    "request_params": {
+      "analysis_mode": "time_based_metadata",
+      "response_format": {
+        "type": "segment_definitions",
+        "segment_definitions": [
+          {
+            "id": "av_defects",
+            "description": "Segment the clip wherever a technical audio-visual defect is visible or audible. Include flickering, visual artifacts, warping or morphing objects, malformed hands or faces, duplicated limbs, sudden resolution or exposure jumps, audio dropout, distortion, or lip/audio sync drift. Do NOT judge creative quality (hook, brand fit, aesthetics).",
+            "fields": [
+              {
+                "name": "defect_type",
+                "type": "string",
+                "description": "The primary defect in this segment",
+                "enum": [
+                  "flicker",
+                  "artifact",
+                  "warping",
+                  "malformed_anatomy",
+                  "duplicated_limb",
+                  "exposure_jump",
+                  "audio_dropout",
+                  "distortion",
+                  "sync_drift",
+                  "other"
+                ]
+              },
+              {
+                "name": "severity",
+                "type": "string",
+                "description": "How disqualifying the defect is",
+                "enum": [
+                  "minor",
+                  "major"
+                ]
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "description": "One-sentence description of what is wrong in this segment"
+              }
+            ]
+          }
+        ]
+      },
+      "temperature": 0.2,
+      "max_tokens": 32768,
+      "min_segment_duration": 2
+    },
+    "status": "ready",
+    "created_at": "2026-07-07T01:52:33Z",
+    "completed_at": "2026-07-07T01:52:42Z",
+    "result": {
+      "generation_id": "e7b90cac-07d6-4be0-bede-e25685385fa6",
+      "data": "{\"av_defects\":[{\"end_time\":5,\"metadata\":{\"defect_type\":\"artifact\",\"description\":\"The steam rising from the coffee mug exhibits unnatural, repetitive looping behavior, indicating a visual artifact.\",\"severity\":\"minor\"},\"start_time\":0}]}",
+      "finish_reason": "stop",
+      "usage": {
+        "output_tokens": 93,
+        "input_tokens": 3825
+      }
+    }
+  }
+}

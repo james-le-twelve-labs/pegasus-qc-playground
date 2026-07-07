@@ -1,0 +1,23 @@
+{
+  "clipId": "card-shuffle",
+  "checkId": "content-verification",
+  "mode": "verdict",
+  "status": "pass",
+  "source": "cache",
+  "elapsedMs": 4495,
+  "verdict": {
+    "line_spoken_matches_script": true,
+    "correct_character_speaking": true,
+    "actual_spoken_words": "",
+    "actual_speaker": "",
+    "notes": "The video contains no audible dialogue or speech; it only features a person shuffling cards in a cafe setting."
+  },
+  "raw": {
+    "id": "3bbee5a6-3ce2-410d-b5c0-3ca54a59984f",
+    "data": "\n\n{\n  \"line_spoken_matches_script\": true,\n  \"correct_character_speaking\": true,\n  \"actual_spoken_words\": \"\",\n  \"actual_speaker\": \"\",\n  \"notes\": \"The video contains no audible dialogue or speech; it only features a person shuffling cards in a cafe setting.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "output_tokens": 75
+    }
+  }
+}
