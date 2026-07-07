@@ -21,13 +21,27 @@ video pipeline needs a quality-control layer."*
 ## Run it locally (< 5 min)
 
 ```sh
+# 1. UI kit (one-time — see note below)
+#    TwelveLabs folks: drop the @twelvelabs-io/react tarball into vendor/
+# 2. Then:
 npm install
 cp .env.example .env        # paste your TWELVELABS_API_KEY
 npm run dev                 # → http://localhost:5173
 ```
 
-No key? The five hero clip+check pairs ship with cached results, so the demo
-works out of the box; live calls need the key.
+No key? All 25 clip+check pairs ship with cached results, so the demo works
+out of the box; live calls need the key.
+
+> **Note on the UI kit:** the frontend uses `@twelvelabs-io/react`, TwelveLabs'
+> internal component library, which is **not publicly distributable** (it lives
+> on SSO-gated GitHub Packages). The dependency points at
+> `vendor/twelvelabs-io-react-0.23.0.tgz`, which is deliberately not in this
+> repo. TwelveLabs folks: `npm pack` it from the twelvelabs-ui repo (or install
+> from GitHub Packages with a PAT) and drop the tarball into `vendor/`.
+> External forkers: everything that matters for learning the QC patterns —
+> `checks/checks.json`, the `api/` proxy, `server/handlers.mjs`, the cached
+> results, and the [Colab notebook](notebooks/Pegasus_AI_Video_QC.ipynb) —
+> works without the UI kit.
 
 ## Wiring up real clips (one-time)
 
