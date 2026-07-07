@@ -124,7 +124,7 @@ export default function App() {
           Built on TwelveLabs Pegasus 1.5 — prompt-based analyze + time-based metadata.
         </Text>
         <Text variant="paragraph-small" className="text-foreground-subtle">
-          Every clip here is a real, unretouched AI generation.
+          Every clip is a real AI generation — provenance logged per clip.
         </Text>
       </footer>
     </div>

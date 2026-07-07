@@ -59,17 +59,22 @@
       "minSegmentDuration": 2,
       "segmentDefinition": {
         "id": "lipsync",
-        "description": "Segment every window where a person is speaking on-camera. For each, judge whether the lips visibly move and track the phonemes of the words heard (native lip-sync) or whether the mouth is frozen/mistimed or the audio is TTS laid over a silent mouth.",
+        "description": "Segment every window where speech is audible. In each window, watch the on-camera person's MOUTH closely before answering the fields: does the mouth visibly open, close, and articulate in time with each word heard? Common failure to catch: voiceover or TTS audio laid over footage of a person whose mouth is closed, still, or smiling without speaking.",
         "fields": [
+          {
+            "name": "mouth_visibly_articulating",
+            "type": "boolean",
+            "description": "True ONLY if the mouth visibly opens and closes while the words are heard. False if the lips stay closed, frozen, or barely move during audible speech."
+          },
           {
             "name": "lips_match_words",
             "type": "boolean",
-            "description": "True if lips articulate the words that are heard"
+            "description": "True ONLY if the visible mouth movements track the specific words heard. False if the mouth is closed or its motion does not correspond to the phonemes."
           },
           {
             "name": "native_lipsync_not_tts_over_silence",
             "type": "boolean",
-            "description": "True if mouth motion is native, not TTS over a still mouth"
+            "description": "False if the audio sounds like narration/TTS laid over footage of someone who is not speaking on camera. True only if the on-camera person is genuinely producing the words."
           },
           {
             "name": "spoken_words",
@@ -79,7 +84,7 @@
           {
             "name": "notes",
             "type": "string",
-            "description": "Any mismatch or timing issue"
+            "description": "Describe what the mouth is doing during this window and any mismatch or timing issue"
           }
         ]
       },

@@ -3,28 +3,88 @@
   "checkId": "av-defect",
   "mode": "timeline",
   "status": "fail",
-  "source": "sample",
+  "source": "cache",
+  "elapsedMs": 9201,
   "segments": [
     {
-      "startTime": 1.1,
-      "endTime": 3.2,
-      "metadata": {
-        "defect_type": "warping",
-        "severity": "major",
-        "description": "Fingers merge into the deck and cards morph shape mid-shuffle."
-      }
-    },
-    {
-      "startTime": 3.8,
-      "endTime": 5.0,
+      "startTime": 0,
+      "endTime": 5,
       "metadata": {
         "defect_type": "malformed_anatomy",
-        "severity": "major",
-        "description": "Left hand briefly shows six fingers while fanning the cards."
+        "description": "The hands shuffling the cards show unnatural finger positioning and warping, indicating a technical defect in the visual generation.",
+        "severity": "major"
       }
     }
   ],
   "raw": {
-    "note": "SAMPLE fixture — replaced by `npm run prerun-checks` once clips are uploaded."
+    "task_id": "6a4c4d569dc43a0535716468",
+    "custom_id": null,
+    "video_source": {
+      "type": "asset_id",
+      "asset_id": "6a4c4d31c7babe8a7abae483",
+      "system_metadata": {
+        "duration": 5.03125
+      }
+    },
+    "request_params": {
+      "analysis_mode": "time_based_metadata",
+      "response_format": {
+        "type": "segment_definitions",
+        "segment_definitions": [
+          {
+            "id": "av_defects",
+            "description": "Segment the clip wherever a technical audio-visual defect is visible or audible. Include flickering, visual artifacts, warping or morphing objects, malformed hands or faces, duplicated limbs, sudden resolution or exposure jumps, audio dropout, distortion, or lip/audio sync drift. Do NOT judge creative quality (hook, brand fit, aesthetics).",
+            "fields": [
+              {
+                "name": "defect_type",
+                "type": "string",
+                "description": "The primary defect in this segment",
+                "enum": [
+                  "flicker",
+                  "artifact",
+                  "warping",
+                  "malformed_anatomy",
+                  "duplicated_limb",
+                  "exposure_jump",
+                  "audio_dropout",
+                  "distortion",
+                  "sync_drift",
+                  "other"
+                ]
+              },
+              {
+                "name": "severity",
+                "type": "string",
+                "description": "How disqualifying the defect is",
+                "enum": [
+                  "minor",
+                  "major"
+                ]
+              },
+              {
+                "name": "description",
+                "type": "string",
+                "description": "One-sentence description of what is wrong in this segment"
+              }
+            ]
+          }
+        ]
+      },
+      "temperature": 0.2,
+      "max_tokens": 32768,
+      "min_segment_duration": 2
+    },
+    "status": "ready",
+    "created_at": "2026-07-07T00:50:30Z",
+    "completed_at": "2026-07-07T00:50:39Z",
+    "result": {
+      "generation_id": "6278acdc-b4ec-4f21-bb29-173d2680bc35",
+      "data": "{\"av_defects\":[{\"end_time\":5,\"metadata\":{\"defect_type\":\"malformed_anatomy\",\"description\":\"The hands shuffling the cards show unnatural finger positioning and warping, indicating a technical defect in the visual generation.\",\"severity\":\"major\"},\"start_time\":0}]}",
+      "finish_reason": "stop",
+      "usage": {
+        "output_tokens": 100,
+        "input_tokens": 3825
+      }
+    }
   }
 }

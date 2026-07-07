@@ -48,7 +48,7 @@ export function ClipGallery({ selectedClipId, onSelect }: ClipGalleryProps) {
         )
       })}
       <Text variant="paragraph-small" className="mt-1 text-foreground-subtle">
-        Real, unretouched generations — model, prompt and seed logged per clip.
+        Real AI generations — model, prompt and seed logged per clip in PROVENANCE.md.
       </Text>
     </div>
   )

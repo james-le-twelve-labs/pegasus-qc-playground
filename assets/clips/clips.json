@@ -3,13 +3,13 @@
     {
       "id": "talking-head",
       "title": "Talking-head interview",
-      "defectLabel": "Lip-sync drift",
+      "defectLabel": "TTS over a still mouth",
       "expected": "fail",
       "file": "/clips/talking-head.mp4",
       "poster": "/clips/talking-head.jpg",
-      "durationSec": 6,
+      "durationSec": 5.03,
       "defaultCheck": "lip-sync",
-      "assetId": null,
+      "assetId": "6a4c4fc597b9fceedb2902b2",
       "params": {
         "brief": "A professional woman in a navy blazer gives a corporate interview in a bright modern office, medium close-up, speaking to camera",
         "line": "Our new product launches this Friday, and we could not be more excited about it.",
@@ -23,11 +23,11 @@
       "expected": "fail",
       "file": "/clips/product-broll.mp4",
       "poster": "/clips/product-broll.jpg",
-      "durationSec": 5,
+      "durationSec": 5.03,
       "defaultCheck": "brief-match",
-      "assetId": null,
+      "assetId": "6a4c4e6e9dc43a0535716cb9",
       "params": {
-        "brief": "A red ceramic coffee mug with a white mountain logo printed on it, steam rising from the coffee, sitting on a rustic wooden desk next to an open silver laptop, camera slowly pans left to right, warm morning light",
+        "brief": "A red ceramic coffee mug with the word \"SUMMIT\" printed on it in white capital letters, steam rising from the coffee, on a rustic wooden desk next to an open silver laptop and a small white plate holding two croissants, camera slowly pans left to right, warm morning light through a window",
         "line": "",
         "speaker": ""
       }
@@ -39,9 +39,9 @@
       "expected": "fail",
       "file": "/clips/card-shuffle.mp4",
       "poster": "/clips/card-shuffle.jpg",
-      "durationSec": 5,
+      "durationSec": 5.03,
       "defaultCheck": "av-defect",
-      "assetId": null,
+      "assetId": "6a4c4d31c7babe8a7abae483",
       "params": {
         "brief": "Close-up of a street magician's hands smoothly shuffling and fanning a deck of playing cards, cafe interior background, shallow depth of field",
         "line": "",
@@ -55,13 +55,13 @@
       "expected": "fail",
       "file": "/clips/dialogue.mp4",
       "poster": "/clips/dialogue.jpg",
-      "durationSec": 6,
+      "durationSec": 6.12,
       "defaultCheck": "content-verification",
-      "assetId": null,
+      "assetId": "6a4c4e29c7babe8a7abaebc5",
       "params": {
-        "brief": "Two people sit across a kitchen table in daylight: a bearded man in a maroon vest and a woman in a denim jacket; the man delivers a line, the woman nods",
+        "brief": "Two people sit across a kitchen table in daylight: a bearded man in a maroon vest and a woman in a denim jacket; the woman delivers a line, the man nods",
         "line": "The shipment arrives tomorrow at nine.",
-        "speaker": "bearded man in a maroon vest"
+        "speaker": "woman in a denim jacket"
       }
     },
     {
@@ -73,7 +73,7 @@
       "poster": "/clips/beach-dog.jpg",
       "durationSec": 8,
       "defaultCheck": "content-log",
-      "assetId": null,
+      "assetId": "6a4c4d359dc43a053571637e",
       "params": {
         "brief": "A golden retriever runs along a wide sandy beach at sunrise, kicking up sand, gentle waves rolling in, cinematic side tracking shot, warm golden light",
         "line": "",

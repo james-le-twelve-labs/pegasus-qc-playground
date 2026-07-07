@@ -3,32 +3,103 @@
   "checkId": "content-log",
   "mode": "timeline",
   "status": "info",
-  "source": "sample",
+  "source": "cache",
+  "elapsedMs": 12239,
   "segments": [
     {
-      "startTime": 0.0,
-      "endTime": 4.2,
+      "startTime": 0,
+      "endTime": 8,
       "metadata": {
-        "summary": "A golden retriever sprints along the wet sand at sunrise, kicking up spray as it runs toward camera.",
-        "setting": "wide sandy beach at sunrise",
-        "characters": ["golden retriever"],
+        "characters": [
+          "Golden Retriever"
+        ],
         "on_screen_text": [],
-        "tags": ["dog", "beach", "sunrise", "running", "tracking shot"]
-      }
-    },
-    {
-      "startTime": 4.2,
-      "endTime": 8.0,
-      "metadata": {
-        "summary": "The dog slows near the waterline as gentle waves roll in, backlit by warm golden light.",
-        "setting": "shoreline with rolling waves",
-        "characters": ["golden retriever"],
-        "on_screen_text": [],
-        "tags": ["dog", "waves", "golden hour", "shoreline"]
+        "setting": "A sandy beach at sunset with ocean waves",
+        "summary": "A golden retriever runs joyfully along a sandy beach at sunset, with waves gently lapping at the shore. The dog's fur glows in the warm sunlight as it moves towards the camera.",
+        "tags": [
+          "dog",
+          "beach",
+          "sunset",
+          "golden retriever",
+          "running",
+          "ocean",
+          "happy dog"
+        ]
       }
     }
   ],
   "raw": {
-    "note": "SAMPLE fixture — replaced by `npm run prerun-checks` once clips are uploaded."
+    "task_id": "6a4c4d699dc43a05357164e5",
+    "custom_id": null,
+    "video_source": {
+      "type": "asset_id",
+      "asset_id": "6a4c4d359dc43a053571637e",
+      "system_metadata": {
+        "duration": 8
+      }
+    },
+    "request_params": {
+      "analysis_mode": "time_based_metadata",
+      "response_format": {
+        "type": "segment_definitions",
+        "segment_definitions": [
+          {
+            "id": "scenes",
+            "description": "Segment the clip into distinct scenes based on changes in setting, subject, or visual composition. For each scene, extract catalog metadata.",
+            "fields": [
+              {
+                "name": "summary",
+                "type": "string",
+                "description": "One-to-two sentence description of what happens in this scene"
+              },
+              {
+                "name": "setting",
+                "type": "string",
+                "description": "The location or environment of the scene"
+              },
+              {
+                "name": "characters",
+                "type": "array",
+                "description": "Characters or people visible in the scene",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "on_screen_text",
+                "type": "array",
+                "description": "Any visible on-screen text or captions",
+                "items": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "tags",
+                "type": "array",
+                "description": "Short catalog tags for search and retrieval",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "temperature": 0.2,
+      "max_tokens": 32768,
+      "min_segment_duration": 2
+    },
+    "status": "ready",
+    "created_at": "2026-07-07T00:50:49Z",
+    "completed_at": "2026-07-07T00:51:00Z",
+    "result": {
+      "generation_id": "40fe06f1-64e4-402d-8ecb-62bff3312d60",
+      "data": "{\"scenes\":[{\"end_time\":8,\"metadata\":{\"characters\":[\"Golden Retriever\"],\"on_screen_text\":[],\"setting\":\"A sandy beach at sunset with ocean waves\",\"summary\":\"A golden retriever runs joyfully along a sandy beach at sunset, with waves gently lapping at the shore. The dog's fur glows in the warm sunlight as it moves towards the camera.\",\"tags\":[\"dog\",\"beach\",\"sunset\",\"golden retriever\",\"running\",\"ocean\",\"happy dog\"]},\"start_time\":0}]}",
+      "finish_reason": "stop",
+      "usage": {
+        "output_tokens": 186,
+        "input_tokens": 4406
+      }
+    }
   }
 }

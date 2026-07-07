@@ -3,30 +3,84 @@
   "checkId": "lip-sync",
   "mode": "timeline",
   "status": "fail",
-  "source": "sample",
+  "source": "cache",
+  "elapsedMs": 9362,
   "segments": [
     {
-      "startTime": 0.0,
-      "endTime": 3.4,
+      "startTime": 0,
+      "endTime": 5,
       "metadata": {
         "lips_match_words": false,
+        "mouth_visibly_articulating": false,
         "native_lipsync_not_tts_over_silence": false,
-        "spoken_words": "Our new product launches this Friday,",
-        "notes": "Mouth barely articulates while full sentence plays — audio reads as TTS over near-still lips."
-      }
-    },
-    {
-      "startTime": 3.4,
-      "endTime": 6.0,
-      "metadata": {
-        "lips_match_words": false,
-        "native_lipsync_not_tts_over_silence": true,
-        "spoken_words": "and we could not be more excited about it.",
-        "notes": "Lip motion resumes but trails the phonemes by roughly 300ms."
+        "notes": "The woman's mouth remains mostly closed or in a static smile throughout the clip. There is no visible articulation matching the spoken words, indicating voiceover audio over non-speaking footage.",
+        "spoken_words": "Our new product launches this Friday, and we could not be more excited about it."
       }
     }
   ],
   "raw": {
-    "note": "SAMPLE fixture — replaced by `npm run prerun-checks` once clips are uploaded."
+    "task_id": "6a4c50509dc43a0535717ae2",
+    "custom_id": null,
+    "video_source": {
+      "type": "asset_id",
+      "asset_id": "6a4c4fc597b9fceedb2902b2",
+      "system_metadata": {
+        "duration": 5.03125
+      }
+    },
+    "request_params": {
+      "analysis_mode": "time_based_metadata",
+      "response_format": {
+        "type": "segment_definitions",
+        "segment_definitions": [
+          {
+            "id": "lipsync",
+            "description": "Segment every window where speech is audible. In each window, watch the on-camera person's MOUTH closely before answering the fields: does the mouth visibly open, close, and articulate in time with each word heard? Common failure to catch: voiceover or TTS audio laid over footage of a person whose mouth is closed, still, or smiling without speaking.",
+            "fields": [
+              {
+                "name": "mouth_visibly_articulating",
+                "type": "boolean",
+                "description": "True ONLY if the mouth visibly opens and closes while the words are heard. False if the lips stay closed, frozen, or barely move during audible speech."
+              },
+              {
+                "name": "lips_match_words",
+                "type": "boolean",
+                "description": "True ONLY if the visible mouth movements track the specific words heard. False if the mouth is closed or its motion does not correspond to the phonemes."
+              },
+              {
+                "name": "native_lipsync_not_tts_over_silence",
+                "type": "boolean",
+                "description": "False if the audio sounds like narration/TTS laid over footage of someone who is not speaking on camera. True only if the on-camera person is genuinely producing the words."
+              },
+              {
+                "name": "spoken_words",
+                "type": "string",
+                "description": "What you HEAR the speaker say in this window"
+              },
+              {
+                "name": "notes",
+                "type": "string",
+                "description": "Describe what the mouth is doing during this window and any mismatch or timing issue"
+              }
+            ]
+          }
+        ]
+      },
+      "temperature": 0.2,
+      "max_tokens": 32768,
+      "min_segment_duration": 2
+    },
+    "status": "ready",
+    "created_at": "2026-07-07T01:03:12Z",
+    "completed_at": "2026-07-07T01:03:18Z",
+    "result": {
+      "generation_id": "24b75602-058b-4988-b1a9-2d15486f6bb4",
+      "data": "{\"lipsync\":[{\"end_time\":5,\"metadata\":{\"lips_match_words\":false,\"mouth_visibly_articulating\":false,\"native_lipsync_not_tts_over_silence\":false,\"notes\":\"The woman's mouth remains mostly closed or in a static smile throughout the clip. There is no visible articulation matching the spoken words, indicating voiceover audio over non-speaking footage.\",\"spoken_words\":\"Our new product launches this Friday, and we could not be more excited about it.\"},\"start_time\":0}]}",
+      "finish_reason": "stop",
+      "usage": {
+        "output_tokens": 154,
+        "input_tokens": 4024
+      }
+    }
   }
 }

@@ -3,15 +3,21 @@
   "checkId": "content-verification",
   "mode": "verdict",
   "status": "fail",
-  "source": "sample",
+  "source": "cache",
+  "elapsedMs": 6814,
   "verdict": {
     "line_spoken_matches_script": true,
     "correct_character_speaking": false,
     "actual_spoken_words": "The shipment arrives tomorrow at nine.",
-    "actual_speaker": "woman in the denim jacket",
-    "notes": "The scripted line is audible but the woman's mouth moves while the bearded man stays silent."
+    "actual_speaker": "man in a maroon vest",
+    "notes": "The man in the maroon vest is the one speaking the line, not the woman in the denim jacket as expected."
   },
   "raw": {
-    "note": "SAMPLE fixture — replaced by `npm run prerun-checks` once clips are uploaded."
+    "id": "68d651f1-41a0-4946-a8d8-cd3432a2c74b",
+    "data": "\n\n{\n  \"line_spoken_matches_script\": true,\n  \"correct_character_speaking\": false,\n  \"actual_spoken_words\": \"The shipment arrives tomorrow at nine.\",\n  \"actual_speaker\": \"man in a maroon vest\",\n  \"notes\": \"The man in the maroon vest is the one speaking the line, not the woman in the denim jacket as expected.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "output_tokens": 91
+    }
   }
 }

@@ -3,21 +3,27 @@
   "checkId": "brief-match",
   "mode": "verdict",
   "status": "fail",
-  "source": "sample",
+  "source": "cache",
+  "elapsedMs": 22343,
   "verdict": {
     "brief_fulfilled": false,
     "subject_present": true,
     "action_present": false,
     "setting_correct": true,
     "missing_or_wrong": [
-      "white mountain logo not visible on the mug",
-      "no steam rising from the coffee",
-      "camera is static — the ordered left-to-right pan never happens"
+      "The laptop is closed, not open as requested.",
+      "The plate holds only one croissant, not two.",
+      "The camera is static; there is no slow pan left to right."
     ],
-    "confidence": 0.88,
-    "notes": "The mug and desk are present but three ordered elements are missing, so the brief is not fulfilled."
+    "confidence": 0.95,
+    "notes": "The generator failed to render the laptop as open, the correct number of croissants, and the specified camera movement."
   },
   "raw": {
-    "note": "SAMPLE fixture — replaced by `npm run prerun-checks` once clips are uploaded."
+    "id": "661c7296-fd4b-4188-83ae-7e3f8bb4ae5c",
+    "data": "\n\n{\n  \"brief_fulfilled\": false,\n  \"subject_present\": true,\n  \"action_present\": false,\n  \"setting_correct\": true,\n  \"missing_or_wrong\": [\n    \"The laptop is closed, not open as requested.\",\n    \"The plate holds only one croissant, not two.\",\n    \"The camera is static; there is no slow pan left to right.\"\n  ],\n  \"confidence\": 0.95,\n  \"notes\": \"The generator failed to render the laptop as open, the correct number of croissants, and the specified camera movement.\"\n}",
+    "finish_reason": "stop",
+    "usage": {
+      "output_tokens": 136
+    }
   }
 }
