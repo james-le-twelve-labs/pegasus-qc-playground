@@ -41,10 +41,17 @@ npm run prerun-checks           # hero pairs only
 npm run prerun-checks -- --all  # every clip × every check
 ```
 
+## Forkable notebook
+
+All five checks as a runnable Colab: [`notebooks/Pegasus_AI_Video_QC.ipynb`](notebooks/Pegasus_AI_Video_QC.ipynb).
+It uses the same `checks/checks.json` definitions and the deployed demo's clip
+URLs, so notebook, demo, and prompt pack can't drift apart.
+
 ## Repo map
 
 ```
 src/                  React + Vite frontend (@twelvelabs-io/react UI kit)
+notebooks/            Forkable Colab — the 5 checks, runnable end-to-end
 api/                  Vercel functions — the key-safe proxy (never ship the key to the browser)
 server/handlers.mjs   Shared proxy logic (Vite dev middleware + Vercel functions)
 checks/checks.json    The 5 pre-baked checks: Verdict prompts + segment definitions
