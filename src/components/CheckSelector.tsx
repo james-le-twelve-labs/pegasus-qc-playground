@@ -25,7 +25,7 @@ export function ModeChip({ mode }: { mode: "verdict" | "timeline" }) {
 export function CheckSelector({ value, onChange, disabled }: CheckSelectorProps) {
   return (
     <Select value={value} onValueChange={onChange} disabled={disabled}>
-      <SelectTrigger size="large" className="w-full sm:w-80">
+      <SelectTrigger size="large" className="w-full">
         <SelectValue placeholder="Pick a QC check" />
       </SelectTrigger>
       <SelectContent>

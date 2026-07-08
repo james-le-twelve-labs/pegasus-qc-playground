@@ -11,7 +11,9 @@ import {
 } from "@twelvelabs-io/react"
 import { ClipGallery } from "./components/ClipGallery"
 import { CheckSelector } from "./components/CheckSelector"
+import { CheckContext } from "./components/CheckContext"
 import { PlayerWithTimeline } from "./components/PlayerWithTimeline"
+import { StepLabel } from "./components/StepLabel"
 import { VerdictCard } from "./components/VerdictCard"
 import { CodePanel } from "./components/CodePanel"
 import { clips, getCheck, getClip } from "./data/catalog"
@@ -67,10 +69,10 @@ export default function App() {
 
       <div className="flex flex-col gap-2">
         <Text variant="display-small" as="h1">
-          QC your AI-generated video
+          Quality Control (QC) for your AI-generated video
         </Text>
         <Text variant="paragraph-large" className="max-w-2xl text-foreground-subtle">
-          AI video generators produce slop at scale. Pegasus is the QA node that catches it before
+          AI video generators produce slop at scale. Pegasus is the QC node that catches it before
           compositing — pick a broken clip, run a check, and get a structured, timestamped verdict
           in seconds. Then steal the exact API call behind it.
         </Text>
@@ -81,39 +83,52 @@ export default function App() {
           <ClipGallery selectedClipId={clipId} onSelect={selectClip} />
         </aside>
 
-        <main className="flex flex-col gap-4 lg:col-span-8">
+        <main className="flex flex-col gap-5 lg:col-span-8">
           <PlayerWithTimeline
             clip={clip}
             check={check}
             segments={result?.mode === "timeline" ? (result.segments ?? []) : null}
           />
 
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
-            <CheckSelector value={checkId} onChange={selectCheck} disabled={loading} />
-            <Button size="lg" onClick={run} disabled={loading} className="sm:w-40">
-              {loading ? <Spinner size="sm" /> : <PlayFilledIcon />}
-              {loading ? "Running…" : "Run QC"}
-            </Button>
+          <div className="flex flex-col gap-2">
+            <StepLabel n={2} title="Choose a check, then run it" />
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end">
+              <div className="flex flex-1 flex-col gap-1">
+                <Text variant="mono-paragraph-small" className="text-foreground-subtle">
+                  Check
+                </Text>
+                <CheckSelector value={checkId} onChange={selectCheck} disabled={loading} />
+              </div>
+              <Button size="lg" onClick={run} disabled={loading} className="w-full sm:w-40">
+                {loading ? <Spinner size="sm" /> : <PlayFilledIcon />}
+                {loading ? "Running…" : "Run QC"}
+              </Button>
+            </div>
           </div>
 
-          {error && (
-            <Banner variant="warning">
-              <BannerIcon />
-              <BannerContent>{error}</BannerContent>
-            </Banner>
-          )}
+          <div className="flex flex-col gap-2">
+            <StepLabel n={3} title="Read the verdict" />
+            <CheckContext clip={clip} check={check} />
 
-          {!result && !loading && !error && (
-            <Banner variant="pegasus">
-              <BannerIcon />
-              <BannerContent>
-                Pick a clip, pick a check, hit <strong>Run QC</strong>. Timeline checks return
-                clickable, timestamped defect segments; Verdict checks return one pass/fail JSON.
-              </BannerContent>
-            </Banner>
-          )}
+            {error && (
+              <Banner variant="warning">
+                <BannerIcon />
+                <BannerContent>{error}</BannerContent>
+              </Banner>
+            )}
 
-          {result && <VerdictCard check={check} result={result} />}
+            {!result && !loading && !error && (
+              <Banner variant="pegasus">
+                <BannerIcon />
+                <BannerContent>
+                  Hit <strong>Run QC</strong> for a structured verdict here. Timeline checks return
+                  clickable, timestamped defect segments; Verdict checks return one pass/fail JSON.
+                </BannerContent>
+              </Banner>
+            )}
+
+            {result && <VerdictCard check={check} result={result} />}
+          </div>
 
           <CodePanel check={check} clip={clip} />
         </main>

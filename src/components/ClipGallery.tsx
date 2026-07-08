@@ -1,5 +1,6 @@
 import { Chip, Text, cn } from "@twelvelabs-io/react"
 import { clips } from "../data/catalog"
+import { StepLabel } from "./StepLabel"
 
 interface ClipGalleryProps {
   selectedClipId: string
@@ -9,8 +10,9 @@ interface ClipGalleryProps {
 export function ClipGallery({ selectedClipId, onSelect }: ClipGalleryProps) {
   return (
     <div className="flex flex-col gap-2">
-      <Text variant="all-caps" as="h2" className="text-foreground-subtle">
-        AI-generated clips
+      <StepLabel n={1} title="Pick a clip" />
+      <Text variant="paragraph-small" className="text-foreground-subtle">
+        Each is a real AI generation with a known defect (or a clean beat).
       </Text>
       {clips.map((clip) => {
         const selected = clip.id === selectedClipId

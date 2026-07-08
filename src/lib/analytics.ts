@@ -2,7 +2,7 @@
 // "Run this yourself" so we can see acquisition, not just traffic.
 // Swap console.debug for the real tracker (PostHog/GA) before public launch.
 
-type QcEvent = "run_qc" | "see_the_code" | "run_it_yourself"
+type QcEvent = "run_qc" | "see_the_code" | "run_it_yourself" | "copy_code"
 
 export function track(event: QcEvent, props: Record<string, string> = {}) {
   const utm = Object.fromEntries(

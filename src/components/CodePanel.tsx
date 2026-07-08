@@ -9,7 +9,6 @@ import {
   Chip,
   CopyIcon,
   Link,
-  ScrollArea,
   Text,
 } from "@twelvelabs-io/react"
 import type { CheckDef, ClipDef } from "../lib/types"
@@ -34,6 +33,7 @@ export function CodePanel({ check, clip }: CodePanelProps) {
   const copy = async () => {
     await navigator.clipboard.writeText(snippet)
     setCopied(true)
+    track("copy_code", { clip: clip.id, check: check.id })
     setTimeout(() => setCopied(false), 1500)
   }
 
@@ -62,23 +62,31 @@ export function CodePanel({ check, clip }: CodePanelProps) {
                 ? "Timeline checks define a segment schema — no prompt — and get back timestamped, typed segments."
                 : "Verdict checks send one engineered prompt and get back a single JSON verdict for the whole clip."}
             </Text>
-            <ScrollArea className="max-h-96 overflow-hidden rounded-tlds-3 bg-surface-secondary">
-              <pre className="p-3 font-tl-mono text-[12px] leading-4">{snippet}</pre>
-            </ScrollArea>
-            <div className="flex items-center gap-2">
-              <Button variant="secondary" size="md" onClick={copy}>
-                {copied ? <CheckmarkIcon /> : <CopyIcon />}
-                {copied ? "Copied" : "Copy code"}
-              </Button>
-              <Link
-                href={`${docsUrl}?utm_source=demo&utm_medium=code_panel&utm_campaign=ai-video-qc`}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => track("run_it_yourself", { clip: clip.id, check: check.id })}
-              >
-                Run this yourself →
-              </Link>
+
+            {/* IDE-style block: filename + always-visible Copy, full code scrollable on both axes */}
+            <div className="overflow-hidden rounded-tlds-3 border border-border-secondary bg-surface-secondary">
+              <div className="flex items-center justify-between gap-2 border-b border-border-secondary px-3 py-1.5">
+                <Text variant="mono-paragraph-small" className="text-foreground-subtle">
+                  qc_check.py
+                </Text>
+                <Button variant="secondary" size="sm" onClick={copy}>
+                  {copied ? <CheckmarkIcon /> : <CopyIcon />}
+                  {copied ? "Copied!" : "Copy code"}
+                </Button>
+              </div>
+              <pre className="max-h-[32rem] overflow-auto p-3 font-tl-mono text-[12px] leading-4">
+                {snippet}
+              </pre>
             </div>
+
+            <Link
+              href={`${docsUrl}?utm_source=demo&utm_medium=code_panel&utm_campaign=ai-video-qc`}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => track("run_it_yourself", { clip: clip.id, check: check.id })}
+            >
+              Run this yourself →
+            </Link>
           </div>
         </AccordionContent>
       </AccordionItem>
