@@ -79,14 +79,40 @@ export function CodePanel({ check, clip }: CodePanelProps) {
               </pre>
             </div>
 
-            <Link
-              href={`${docsUrl}?utm_source=demo&utm_medium=code_panel&utm_campaign=ai-video-qc`}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => track("run_it_yourself", { clip: clip.id, check: check.id })}
-            >
-              Run this yourself →
-            </Link>
+            {/* "Want this in your app?" hook (Ani, standup 2026-07-08): make it
+                explicit the snippet is copy-paste-and-run in the customer's own
+                app, with a direct path to an API key. */}
+            <div className="flex flex-col gap-3 rounded-tlds-3 border border-border-secondary bg-surface-analyze/40 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+              <div className="flex flex-col gap-0.5">
+                <Text variant="title-small-bold">Want this in your app?</Text>
+                <Text variant="paragraph-small" className="text-foreground-subtle">
+                  This snippet is the whole integration — copy it, drop in your API key, and
+                  it runs against your own videos.
+                </Text>
+              </div>
+              <div className="flex shrink-0 items-center gap-3">
+                <Link
+                  href={`${docsUrl}?utm_source=demo&utm_medium=code_panel&utm_campaign=ai-video-qc`}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={() => track("run_it_yourself", { clip: clip.id, check: check.id })}
+                >
+                  Run this yourself →
+                </Link>
+                <Button asChild variant="primary" size="sm">
+                  <a
+                    href="https://playground.twelvelabs.io?utm_source=demo&utm_medium=code_panel&utm_campaign=ai-video-qc"
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() =>
+                      track("want_it_in_your_app", { clip: clip.id, check: check.id })
+                    }
+                  >
+                    Get your API key →
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </AccordionContent>
       </AccordionItem>
