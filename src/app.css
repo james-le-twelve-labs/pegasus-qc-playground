@@ -9,3 +9,10 @@
 body {
   @apply bg-surface-body font-tl-sans text-foreground-body antialiased;
 }
+
+/* When embedded in an iframe (EmbedResizer sets data-embedded), release the
+   min-height:100vh floor so the reported height is the true content height and
+   the parent frame can shrink to fit — no gaps on desktop or after collapses. */
+html[data-embedded] .min-h-screen {
+  min-height: 0;
+}
